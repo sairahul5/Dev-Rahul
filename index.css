@@ -1,0 +1,231 @@
+:root {
+  min-height: 100vh;
+  background: linear-gradient(45deg, #9fb5c7, #ffffff);
+  font-family: 'Roboto', sans-serif;
+}
+
+.navigation {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1200px;
+  height: 70px;
+  background-color: rgba(30, 39, 46, 0.3);
+  backdrop-filter: blur(60px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.35);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.navigation:hover {
+  box-shadow: 0 8px 32px 8px rgba(0, 0, 0, 0.4);
+  background-color: rgba(30, 39, 46, 0.4);
+}
+
+.navigation ul{
+  display: flex;
+  width: 700px;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-end;
+  margin-left: auto;
+  padding-right: 20px;
+}
+
+.navigation ul li {
+  position: relative;
+  list-style: none;
+  width: 140px;
+  height: 70px;
+  z-index: 2;
+}
+
+.navigation ul li a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+  text-decoration: none; /* Added to remove underline */
+  color: #fff; /* Default text color */
+}
+
+.navigation ul li.active a {
+    color: #1e272e;
+}
+
+.navigation ul li.active a .icon {
+    transform: translateY(-10px);
+    color: #ffffff;
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+    color: #ffffff;
+    z-index: 3;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation ul li a:hover .icon {
+    color: #4de4ff;
+    text-shadow: 0 0 10px rgba(77, 228, 255, 0.5);
+    transform: translateY(-10px);
+}
+
+.navigation ul li a .text {
+    position: absolute;
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 0.75em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(15px);
+    width: 100%;
+    text-align: center;
+    bottom: 10px;
+    pointer-events: none;
+}
+
+.navigation ul li a:hover .text {
+    opacity: 1;
+    transform: translateY(5px);
+    color: #4de4ff;
+}
+
+.navigation ul li.active a .text {
+    opacity: 1;
+    transform: translateY(5px);
+    color: #ffffff;
+    text-shadow: 0 0 5px #ffffff;
+}
+
+.navigation .brand {
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1.7em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 2;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    display: flex;
+    align-items: center;
+}
+
+.navigation .brand .cursor {
+    display: inline-block;
+    width: 3px;
+    background-color: #fff;
+    margin-left: 2px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% { background-color: #fff; }
+    49% { background-color: #fff; }
+    50% { background-color: transparent; }
+    99% { background-color: transparent; }
+    100% { background-color: #fff; }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Add styles for middle navigation */
+.middle-nav {
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    /* Decrease width while keeping height the same */
+    width: 500px; /* Reduced from 800px */
+    height: 200px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(40px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional: Adjust hover effect for middle nav */
+.middle-nav:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Specific styles for the middle navigation list items */
+.navigation .list-middle {
+    position: relative;
+    list-style: none;
+    width: 100px; /* Reduced from 140px */
+    height: 70px;
+    z-index: 2;
+}
+
+/* Active state for middle navigation */
+.navigation .list-middle.active a .icon {
+    transform: translateY(-10px);
+    color: #ffffff;
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+}
+
+.navigation .list-middle.active a .text {
+    opacity: 1;
+    transform: translateY(5px);
+    color: #ffffff;
+    text-shadow: 0 0 5px #ffffff;
+}
+
+/* Add specific styles for the middle navigation brand */
+.middle-nav .brand {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 20%;
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 2;
+    text-align: center;
+    width: auto;
+}
+
+/* Adjust cursor for middle navigation */
+.middle-nav .brand .cursor {
+    display: inline-block;
+    width: 3px;
+    background-color: #fff;
+    margin-left: 2px;
+    animation: blink 1s infinite;
+    height: 20px; /* Add height to make cursor more visible */
+}
+
+/* Adjust the ul inside middle nav to center items vertically */
+.middle-nav ul {
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    padding-right: 0; /* Remove right padding */
+    margin-top: 30px; /* Add some space from the brand text */
+}
