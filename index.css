@@ -229,3 +229,91 @@ body {
     padding-right: 0; /* Remove right padding */
     margin-top: 30px; /* Add some space from the brand text */
 }
+
+/* Remove hover and active effects for middle navigation items */
+.navigation .list-middle a {
+    color: #ffffff; /* Set default color */
+    text-shadow: none; /* Remove text shadow */
+    transition: none; /* Remove transition effects */
+}
+
+.navigation .list-middle a:hover {
+    color: #ffffff; /* Keep color the same on hover */
+    text-shadow: none; /* Keep text shadow the same on hover */
+}
+
+.navigation .list-middle.active a {
+    color: #ffffff; /* Keep active color the same */
+    text-shadow: none; /* Keep text shadow the same for active */
+}
+
+/* Remove hover moving effect for middle navigation items */
+.navigation .list-middle a:hover .icon {
+    color: #4de4ff; /* Keep the hover color */
+    text-shadow: 0 0 10px rgba(77, 228, 255, 0.5);
+    transform: none; /* Remove the moving effect */
+}
+
+.navigation .list-middle.active a .icon {
+    color: #ffffff; /* Keep active color */
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+}
+
+/* Remove hover and active moving effect for middle navigation items */
+.navigation .list-middle a .text {
+    transform: none; /* Remove the moving effect */
+    opacity: 1; /* Ensure text is always visible */
+}
+
+.navigation .list-middle a:hover .text {
+    opacity: 1; /* Keep text visible on hover */
+    transform: none; /* Remove the moving effect */
+}
+
+.navigation .list-middle.active a .text {
+    opacity: 1; /* Keep active text visible */
+    transform: none; /* Remove the moving effect */
+}
+
+/* Add margin to the text in the middle navigation */
+.navigation .list-middle a .text {
+    margin-top: 5px; /* Adjust this value to move the text down */
+    transition: none; /* Ensure no transition effect */
+}
+
+/* Styles for the square blur box */
+.square-blur-box {
+    position: fixed; /* Position it in the center of the page */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center it */
+    width: 200px; /* Set width */
+    height: 200px; /* Set height */
+    background: rgba(255, 255, 255, 0.1); /* Background color */
+    backdrop-filter: blur(40px); /* Increase blur effect */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow */
+    display: flex; /* Flexbox for centering content */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    color: #fff; /* Text color */
+    text-align: center; /* Center text */
+}
+
+.go-button {
+    margin-top: 20px; /* Space above the button */
+    padding: 10px 20px; /* Padding for the button */
+    background-color: rgba(255, 255, 255, 0.8); /* Change to white */
+    color: #000; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s; /* Smooth background change */
+}
+
+.go-button:hover {
+    background-color: rgba(255, 255, 255, 1); /* Change background on hover */
+}
